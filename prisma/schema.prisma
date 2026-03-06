@@ -13,22 +13,17 @@ datasource db {
   provider = "mysql"
 }
 
-enum Role {
-  ADMIN
-  USER
-}
-
-model Doctor {
+model Doctors {
   id             Int          @id @default(autoincrement())
-  username       String
+  username       String @unique
   password       String
   specialization String
   doctornote     DoctorNote[]
 }
 
-model User {
+model Users {
   id       Int    @id @default(autoincrement())
-  username String
+  username String @unique
   password String
 
   healthrecord HealthRecord[]
@@ -38,20 +33,20 @@ model User {
 model DoctorNote {
   id Int @id @default(autoincrement())
 
-  doctor   Doctor? @relation(fields: [doctorId], references: [id])
+  doctor   Doctors? @relation(fields: [doctorId], references: [id])
   doctorId Int?
 
   note     String
   createAt DateTime
   
-  user     User?    @relation(fields: [userId], references: [id])
+  user     Users?    @relation(fields: [userId], references: [id])
   userId   Int?
 }
 
 model HealthRecord {
   id Int @id @default(autoincrement())
 
-  user   User? @relation(fields: [userId], references: [id])
+  user   Users? @relation(fields: [userId], references: [id])
   userId Int?
 
   type  String

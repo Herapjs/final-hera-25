@@ -1,0 +1,76 @@
+@BASE_URL=http://localhost:5000
+
+###register /users
+POST {{BASE_URL}}/auth/register/users
+Content-Type: application/json
+
+{
+    "username":"b",
+    "password":"b123456"
+}
+
+###register /doctors
+POST {{BASE_URL}}/auth/register/doctors
+Content-Type: application/json
+
+{
+    "username":"b",
+    "password":"b123456",
+     "specialization": "eyes"
+}
+
+
+###login /users
+POST {{BASE_URL}}/auth/login/users
+Content-Type: application/json
+
+{
+     "username":"b",
+    "password":"b123456"
+}
+
+###login /doctors
+POST {{BASE_URL}}/auth/login/doctors
+Content-Type: application/json
+
+{
+    "username":"b",
+    "password":"b123456",
+     "specialization": "eyes"
+}
+
+
+
+### get me/users
+GET {{BASE_URL}}/users/users/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJiIiwiaWF0IjoxNzcyNzg3OTQ2LCJleHAiOjE3NzI4NzQzNDZ9.wXzjBmCKundPxrlyyXtMyvlAZzrOVvVgCzGhrVhH_vY
+
+
+
+### get me/doctors
+GET {{BASE_URL}}/users/doctors/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJiIiwic3BlY2lhbGl6YXRpb24iOiJleWVzIiwiaWF0IjoxNzcyNzg4MDYyLCJleHAiOjE3NzI4NzQ0NjJ9.AbKOm7WkM9XCzNEb0GFRHQ8x58SvSSOrzq2_eb4-mAc
+
+
+### edit me/users
+PUT {{BASE_URL}}/users/users/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJiIiwiaWF0IjoxNzcyNzg3OTQ2LCJleHAiOjE3NzI4NzQzNDZ9.wXzjBmCKundPxrlyyXtMyvlAZzrOVvVgCzGhrVhH_vY
+
+{
+  "username": "bb",
+  "password": "bb123456"
+}
+
+### edit me/doctors
+PUT {{BASE_URL}}/users/doctors/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJiIiwic3BlY2lhbGl6YXRpb24iOiJleWVzIiwiaWF0IjoxNzcyNzg4MDYyLCJleHAiOjE3NzI4NzQ0NjJ9.AbKOm7WkM9XCzNEb0GFRHQ8x58SvSSOrzq2_eb4-mAc
+
+{
+    "username":"bb",
+    "password":"bb123456",
+    "specialization": "eyes a lot"
+}
