@@ -15,6 +15,7 @@ export async function authUsersCheck(req, res, next) {
         })
         const users = await findUserById(payload.id)
         if (!users) {
+            console.log("ไม่รู้")
             throw createError(401, "Unauthorization")
         }
         req.users = users

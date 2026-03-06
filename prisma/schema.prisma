@@ -51,5 +51,5 @@ model HealthRecord {
 
   type  String
   value String
-  date  DateTime
+  date  DateTime @default(now())
 }

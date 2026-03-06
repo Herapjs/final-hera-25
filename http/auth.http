@@ -74,3 +74,24 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hb
     "password":"bb123456",
     "specialization": "eyes a lot"
 }
+
+
+### get HealthRecord
+GET {{BASE_URL}}/records/health-records
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJiIiwiaWF0IjoxNzcyNzg3OTQ2LCJleHAiOjE3NzI4NzQzNDZ9.wXzjBmCKundPxrlyyXtMyvlAZzrOVvVgCzGhrVhH_vY
+
+### post HealthRecord
+POST {{BASE_URL}}/records/health-records
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJiIiwiaWF0IjoxNzcyNzk2NDA1LCJleHAiOjE3NzI4ODI4MDV9.b_b9VkXKfFByog96pONPXlDi1_FXXqwcH4jmWjjEO30
+
+{
+  "type": "string",
+  "value": "string"
+}
+
+### delete HealthRecord
+DELETE  {{BASE_URL}}/records/health-records/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJiIiwiaWF0IjoxNzcyNzk2NDA1LCJleHAiOjE3NzI4ODI4MDV9.b_b9VkXKfFByog96pONPXlDi1_FXXqwcH4jmWjjEO30
